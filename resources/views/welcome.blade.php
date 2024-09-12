@@ -7,7 +7,7 @@
     ================================================== -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hudson</title>
+    <title>{{ $front_title }}</title>
 
     <script>
         document.documentElement.classList.remove('no-js');
@@ -56,7 +56,7 @@
                 <div class="s-header__block">
                     <div class="s-header__logo">
                         <a class="logo" href="index.html">
-                            <img src="images/logo.svg" alt="Homepage">
+                            <img src="{{ $header_logo }}" alt="Homepage">
                         </a>
                     </div>
 
