@@ -9,6 +9,6 @@ class Setting extends Model
     protected $table = 'settings';
     
     protected $fillable = [
-        'setting_name', 'content'
+        'setting_name', 'content', 'sub_content'
     ];
 }

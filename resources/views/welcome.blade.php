@@ -87,9 +87,7 @@
 
                         <div class="s-intro__content-pretitle text-pretitle">Hello</div>
                         <h1 class="s-intro__content-title">
-                            I'm Jonathan Doe <br>
-                            a product designer <br>
-                            base in Somewhere.
+                            {{ $hero_desc }}
                         </h1>
 
                         <div class="s-intro__content-btns">
@@ -165,12 +163,11 @@
             </ul> <!-- end s-intro__social -->
 
             <div class="s-intro__content-media">
-                <img src="images/intro-bg.jpg" srcset="images/intro-bg.jpg 1x, images/intro-bg.jpg 2x"
-                    alt="">
+                <img src="{{ $hero_image }}" alt="">
             </div> <!-- s-intro__content-media -->
 
             <div class="s-intro__btn-download">
-                <a class="btn btn--stroke" href="#0">Get My CV</a>
+                <a class="btn btn--stroke" target="_blank" href="{{ $my_cv }}">Get My CV</a>
             </div> <!-- end s-intro__btn-download -->
 
             <div class="s-intro__scroll-down">
@@ -202,20 +199,7 @@
                     </div> <!-- end section-header -->
 
                     <p class="attention-getter">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas explicabo id debitis
-                        cupiditate cumque, error quia! Debitis cupiditate ipsa nihil labore, earum atque dolor quos
-                        saepe vero inventore, odit nam deleniti accusantium omnis mollitia consequatur harum incidunt!
-                        Ex modi aut repudiandae doloremque commodi recusandae labore sit. Perspiciatis omnis dolor
-                        dolores fuga iusto, recusandae animi nisi consequuntur exercitationem id maxime earum pariatur
-                        voluptas! Porro non quos quae tempora fuga quis sequi minus sed sint debitis reiciendis, nostrum
-                        natus suscipit iusto odio.
-                    </p>
-
-                    <p class="attention-getter">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit. Ut enim
-                        ad minim
+                        {{ $about_me }}
                     </p>
 
                     <div class="grid-list-items s-about__blocks">
@@ -224,24 +208,8 @@
                             <h4 class="s-about__block-title">Experience</h4>
                             <ul class="s-about__list">
                                 <li>
-                                    Spotify
-                                    <span>Product Designer</span>
-                                </li>
-                                <li>
-                                    Dropbox
-                                    <span>Interface Developer</span>
-                                </li>
-                                <li>
-                                    Google
-                                    <span>Lead UI Designer</span>
-                                </li>
-                                <li>
-                                    Figma
-                                    <span>UI Designer</span>
-                                </li>
-                                <li>
-                                    Microsoft
-                                    <span>UI Designer</span>
+                                    {{ $experience_1->content }}
+                                    <span>{{ $experience_1->sub_content }}</span>
                                 </li>
                             </ul>
                         </div> <!--end s-about__block -->
