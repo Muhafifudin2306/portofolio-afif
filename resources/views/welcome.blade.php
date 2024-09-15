@@ -207,10 +207,12 @@
                         <div class="grid-list-items__item s-about__block">
                             <h4 class="s-about__block-title">Experience</h4>
                             <ul class="s-about__list">
-                                <li>
-                                    {{ $experience_1->content }}
-                                    <span>{{ $experience_1->sub_content }}</span>
-                                </li>
+                                @foreach ($experiences as $item)
+                                    <li>
+                                        {{ $item->role }}
+                                        <span>{{ $item->place }}</span>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div> <!--end s-about__block -->
 
@@ -218,36 +220,12 @@
                             <h4 class="s-about__block-title">Awards</h4>
 
                             <ul class="s-about__list">
-                                <li>
-                                    <a href="#0">
-                                        Site Of The Month
-                                        <span>Awwwards — 2023</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#0">
-                                        Site Of The Day
-                                        <span>Awwwards — 2023</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#0">
-                                        Agency of The Year
-                                        <span>Awwwards — 2022</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#0">
-                                        FWA of The Month
-                                        <span>FWA — 2022</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#0">
-                                        Site Of The Month
-                                        <span>Awwwards — 2022</span>
-                                    </a>
-                                </li>
+                                @foreach ($awards as $award)
+                                    <li>
+                                        {{ $award->award_name }}
+                                        <span>{{ $award->award_official . ' ' . '-' . ' ' . $award->year }}</span>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div> <!--end s-about__block -->
 
@@ -255,24 +233,11 @@
                             <h4 class="s-about__block-title">Skills</h4>
 
                             <ul class="s-about__list">
+                                @foreach ($skills as $skill)
                                 <li>
-                                    Product Design
+                                    {{ $skill->skill_name }}
                                 </li>
-                                <li>
-                                    UI/UX Design
-                                </li>
-                                <li>
-                                    Prototyping
-                                </li>
-                                <li>
-                                    Frontend Development
-                                </li>
-                                <li>
-                                    Illustration
-                                </li>
-                                <li>
-                                    Visual Design
-                                </li>
+                                @endforeach
                             </ul>
                         </div> <!--end s-about__block -->
 

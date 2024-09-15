@@ -4,11 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Setting extends Model
+class Skill extends Model
 {
-    protected $table = 'settings';
+    protected $table = 'skills';
     
     protected $fillable = [
-        'setting_name', 'content'
+        'skill_name'
     ];
 }

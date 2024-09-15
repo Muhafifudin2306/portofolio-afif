@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Award;
+use App\Models\Experience;
 use App\Models\Setting;
+use App\Models\Skill;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -14,7 +17,9 @@ class FrontController extends Controller
         $hero_image = Setting::where('setting_name', 'hero_image')->first()->content ?? null;
         $my_cv = Setting::where('setting_name', 'my_cv')->first()->content ?? null;
         $about_me = Setting::where('setting_name', 'about_me')->first()->content ?? null;
-        $experience_1 = Setting::where('setting_name', 'experience_1')->first() ?? null;
+        $experiences = Experience::latest()->get();
+        $awards = Award::latest()->get();
+        $skills = Skill::latest()->get();
         return view('welcome', compact(
             'header_logo',
             'front_title',
@@ -22,7 +27,9 @@ class FrontController extends Controller
             'hero_image',
             'my_cv',
             'about_me',
-            'experience_1'
+            'experiences',
+            'awards',
+            'skills'
         ));
     }
 }
